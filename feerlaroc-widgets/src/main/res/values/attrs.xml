@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DataBite">
+
+        <attr name="text_size" format="dimension|reference" />
+        <attr name="text_color" format="color|reference" />
+
+        <attr name="show_label" format="boolean" />
+        <attr name="label_text_size" format="dimension|reference" />
+        <attr name="label_text_color" format="color|reference" />
+        <attr name="label_position" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+
+    </declare-styleable>
+
+
+</resources>
