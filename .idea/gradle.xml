@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/feerlaroc-utils" />
             <option value="$PROJECT_DIR$/feerlaroc-widgets" />
+            <option value="$PROJECT_DIR$/feerlaroc-zoho" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -4,15 +4,14 @@ import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
-import com.jakewharton.rxbinding.widget.RxTextView;
 
-import java.util.ArrayList;
-import java.util.Map;
+import com.jakewharton.rxbinding.widget.RxTextView;
 
 import rx.Observable;
 
 
-public class ReactiveTextView extends AppCompatTextView {
+public class ReactiveTextView extends AppCompatTextView
+    implements Reactive{
 
     private static final String TAG = "ReactiveTextView";
     private String[] mKey;
@@ -53,5 +52,10 @@ public class ReactiveTextView extends AppCompatTextView {
     public void subscribeTo(Observable<String> observable){
 
         observable.subscribe(this::updateValue);
+    }
+
+    @Override
+    public void subscribe(Observable observable) {
+
     }
 }

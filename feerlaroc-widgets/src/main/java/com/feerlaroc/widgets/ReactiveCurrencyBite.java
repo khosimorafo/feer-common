@@ -6,10 +6,8 @@ import android.view.View;
 
 import rx.Observable;
 
-/**
- * Created by root on 2016/09/07.
- */
-public class ReactiveCurrencyBite extends ReactiveDataBite {
+public class ReactiveCurrencyBite extends ReactiveDataBite
+    implements Reactive{
 
     Observable<Double> mObservable;
 
@@ -38,11 +36,17 @@ public class ReactiveCurrencyBite extends ReactiveDataBite {
 
     private void updateValue(Double amount){
 
+        //Change this label to local currency
         setValue("R " + amount.toString());
     }
 
     @Override
     public void onClick(View v) {
+
+    }
+
+    @Override
+    public void subscribe(Observable observable) {
 
     }
 }

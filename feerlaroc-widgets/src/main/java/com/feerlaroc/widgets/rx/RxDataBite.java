@@ -23,8 +23,8 @@ public class RxDataBite {
     @CheckResult
     @NonNull
     public static Action1<? super String> label(@NonNull final DataBite view) {
-        checkNotNull(view, "view == null");
 
+        checkNotNull(view, "view == null");
         return view::setLabel;
     }
 
@@ -37,8 +37,8 @@ public class RxDataBite {
     @CheckResult
     @NonNull
     public static Action1<? super String> value(@NonNull final DataBite view) {
-        checkNotNull(view, "view == null");
 
+        checkNotNull(view, "view == null");
         return view::setValue;
     }
 }
