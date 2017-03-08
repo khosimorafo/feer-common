@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'feerlaroc-utils'
+
+    publishedGroupId = 'com.feerlaroc.utils'
+    libraryName = 'feerlaroc-utils'
+    artifact = 'feerlaroc-utils'
+
+    libraryDescription = 'feerlaroc utilities library'
+
+    siteUrl = 'https://github.com/khosimorafo/feer-common'
+    gitUrl =  'https://github.com/khosimorafo/feer-common.git'
+
+    libraryVersion = libVersion
+
+    developerId = 'khosimorafo'
+    developerName = 'Khosi Morafo'
+    developerEmail = 'khosimorafo@yahoo.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.jakewharton:butterknife:5.1.2'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.google.code.findbugs:jsr305:2.0.3'
+
+    compile 'io.reactivex:rxandroid:1.2.1'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'joda-time:joda-time:2.9.4'
+    compile group: 'com.opencsv', name: 'opencsv', version: '3.3'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+}
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
