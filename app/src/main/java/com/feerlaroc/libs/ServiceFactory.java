@@ -1,5 +1,6 @@
 package com.feerlaroc.libs;
 
+import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
@@ -30,6 +31,8 @@ public class ServiceFactory {
     private static final int DEFAULT_TIMEOUT = 10;
     private static Retrofit sRetrofit;
     private static OkHttpClient sClient;
+
+    private static Application mApp;
 
     private static final String CACHE_CONTROL = "Cache-Control";
     private static Context mContext;

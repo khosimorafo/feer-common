@@ -93,13 +93,13 @@ public abstract class DataBite extends View implements View.OnClickListener {
         final TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.DataBite,
                 defStyleAttr, defStyleRes);
 
-        mTextSize = attributes.getDimension(R.styleable.DataBite_text_size, mTextSize);
-        mTextColor = attributes.getColor(R.styleable.DataBite_text_color, mTextColor);
+        mTextSize = attributes.getDimension(R.styleable.DataBite_bite_text_size, mTextSize);
+        mTextColor = attributes.getColor(R.styleable.DataBite_bite_text_color, mTextColor);
 
-        mLabelTextSize = attributes.getDimension(R.styleable.DataBite_label_text_size, mLabelTextSize);
-        mLabelTextColor = attributes.getColor(R.styleable.DataBite_label_text_color, mLabelTextColor);
+        mLabelTextSize = attributes.getDimension(R.styleable.DataBite_bite_label_text_size, mLabelTextSize);
+        mLabelTextColor = attributes.getColor(R.styleable.DataBite_bite_label_text_color, mLabelTextColor);
 
-        mShowLabel = attributes.getBoolean(R.styleable.DataBite_show_label, mShowLabel);
+        mShowLabel = attributes.getBoolean(R.styleable.DataBite_bite_show_label, mShowLabel);
 
 
 
