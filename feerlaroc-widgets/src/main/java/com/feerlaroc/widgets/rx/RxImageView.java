@@ -27,6 +27,6 @@ public class RxImageView {
     public static Action1<? super Bitmap> value(@NonNull final ReactiveCircleImageView view) {
 
         checkNotNull(view, "view == null");
-        return (Action1<Bitmap>) value -> view.setImageBitmap(value);
+        return (Action1<Bitmap>) view::setImageBitmap;
     }
 }

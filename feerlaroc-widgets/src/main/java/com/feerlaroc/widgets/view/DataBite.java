@@ -17,7 +17,8 @@ import android.view.View;
 
 import com.feerlaroc.widgets.R;
 
-public abstract class DataBite extends View implements View.OnClickListener {
+public abstract class DataBite extends View
+        implements View.OnClickListener {
 
     private static final float DEFAULT_TEXT_SIZE = 28;
     private static final int DEFAULT_TEXT_COLOR = Color.DKGRAY;
@@ -123,20 +124,16 @@ public abstract class DataBite extends View implements View.OnClickListener {
     public void setValue(String value){
 
         mValue = value;
-
         invalidate();
     }
 
     public void setLabel(String label){
 
         mLabel = label;
-
         invalidate();
     }
 
     private void drawValue(Canvas canvas){
-
-
 
         mLabelPaint.getTextBounds(mLabel, 0, mLabel.length(), mLabelBounds);
 
@@ -144,10 +141,6 @@ public abstract class DataBite extends View implements View.OnClickListener {
         float x = getPaddingLeft();
 
         canvas.drawText(mValue, x, mHeight, mTextPaint);
-/*
-        canvas.drawRect(getPaddingLeft(), getPaddingTop()  + mLabelBounds.height(), mWidth - getPaddingRight(),
-                mHeight, mTextPaint);
-*/
     }
 
     private void drawLabel(Canvas canvas){

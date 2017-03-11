@@ -25,11 +25,6 @@ public class RxActualNumberPicker {
     public static Action1<? super Double> value(@NonNull final ReactiveActualNumberPicker view) {
         checkNotNull(view, "view == null");
 
-        return new Action1<Double>() {
-            @Override
-            public void call(Double number) {
-                view.setValue(number);
-            }
-        };
+        return (Action1<Double>) view::setValue;
     }
 }

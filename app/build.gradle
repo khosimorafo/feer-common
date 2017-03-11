@@ -36,9 +36,9 @@ dependencies {
     compile project(path: ':feerlaroc-utils')
     compile project(path: ':feerlaroc-widgets')
 
+
+
     compile 'com.android.support:appcompat-v7:25.2.0'
-
-
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
 }

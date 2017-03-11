@@ -669,7 +669,7 @@ public class Coloring {
      * @param shouldFade Set to true if the state list (pre-API 21) should have a fading effect
      * @param original This drawable will be contrasted to the {@code clickedBackground} color on press (pre-API 21) or used for masking in
      *            ripples on post-API 21
-     * @return The state list drawable (< API21) or a ripple drawable (>= API21) that is in contrast with the on-click background color
+     * @return The state list drawable
      */
     public Drawable createContrastBackgroundDrawable(Context context, int normal, int clickedBackground, boolean shouldFade,
             Drawable original) {
