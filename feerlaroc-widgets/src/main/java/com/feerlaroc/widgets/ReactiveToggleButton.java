@@ -3,12 +3,18 @@ package com.feerlaroc.widgets;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.widget.Button;
 
 import com.feerlaroc.widgets.rx.RxToggleButton;
+
 import org.honorato.multistatetogglebutton.MultiStateToggleButton;
+
 import rx.Observable;
+import rx.subjects.BehaviorSubject;
 
 public class ReactiveToggleButton extends MultiStateToggleButton {
+
+    static BehaviorSubject<Integer> mSelectedSubject = BehaviorSubject.create();
 
     private static final String TAG = "ReactiveToggleButton";
     private String mKey;
@@ -44,4 +50,21 @@ public class ReactiveToggleButton extends MultiStateToggleButton {
         observable.subscribe(this::updateValue);
     }
 
+    @Override
+    public void setValue(int position) {
+        super.setValue(position);
+
+        mSelectedSubject.onNext(position);
+    }
+
+    public BehaviorSubject<Integer> getSelectedSubject(){
+
+        return mSelectedSubject;
+    }
+
+    public String getTextAtChild(int index){
+
+        Button btn = (Button) getChildAt(index);
+        return  (String) btn.getText();
+    }
 }

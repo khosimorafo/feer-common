@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">feer-common</string>
     <string name="title_activity_wheel">WheelActivity</string>
+
+    <string-array name="property_array">
+        <item>ABC</item>
+        <item>Siphakamile</item>
+        <item>Mganka</item>
+    </string-array>
+
 </resources>
