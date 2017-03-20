@@ -8,6 +8,8 @@ import android.widget.Button;
 import com.feerlaroc.widgets.rx.RxToggleButton;
 import com.feerlaroc.widgets.view.FeerlarocMultiStateToggleButton;
 
+import java.util.List;
+
 import rx.Observable;
 import rx.subjects.BehaviorSubject;
 
@@ -32,6 +34,17 @@ public class ReactiveToggleButton extends FeerlarocMultiStateToggleButton {
         return this;
     }
 
+    private void updateValue(List items){
+
+        try {
+
+            RxToggleButton.items(this).call(items);
+        } catch (Exception e) {
+
+            Log.e(TAG, getContext().getString(R.string.str_dbkey_undefined) + " : " + e.getMessage());
+        }
+    }
+
     private void setSelected(Integer int_value){
 
         try {
@@ -44,9 +57,37 @@ public class ReactiveToggleButton extends FeerlarocMultiStateToggleButton {
         }
     }
 
-    public void subscribeTo(Observable<Integer> observable){
+    private void setSelected(String text){
 
-        observable.subscribe(this::setSelected);
+        try {
+
+            RxToggleButton.text(this).call(text);
+
+        } catch (Exception e) {
+
+            Log.e(TAG, getContext().getString(R.string.str_dbkey_undefined) + " : " + e.getMessage());
+        }
+    }
+
+    public void setSelected(Observable<Integer> selected){
+
+        selected.subscribe(this::setSelected);
+    }
+
+    public void setSelectedText(Observable<String> selected){
+
+        selected.subscribe(this::setSelected);
+    }
+
+    public void setItems(Observable<List> observable){
+
+        observable.subscribe(this::updateValue);
+    }
+
+    @Deprecated
+    public void subscribeTo(Observable<List> observable){
+
+        observable.subscribe(this::updateValue);
     }
 
     @Override

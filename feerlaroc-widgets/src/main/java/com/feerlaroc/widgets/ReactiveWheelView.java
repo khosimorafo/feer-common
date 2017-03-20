@@ -62,12 +62,23 @@ public class ReactiveWheelView extends WheelView {
         }
     }
 
+    public void setItems(Observable<List> observable){
+
+        observable.subscribe(this::updateValue);
+    }
+
+    @Deprecated
     public void subscribeTo(Observable<List> observable){
 
         observable.subscribe(this::updateValue);
     }
 
     public void setSelected(Observable<Integer> selected){
+
+        selected.subscribe(this::setSelected);
+    }
+
+    public void setSelectedText(Observable<String> selected){
 
         selected.subscribe(this::setSelected);
     }
