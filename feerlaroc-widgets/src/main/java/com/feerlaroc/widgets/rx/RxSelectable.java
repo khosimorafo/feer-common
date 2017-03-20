@@ -32,4 +32,12 @@ public class RxSelectable {
         checkNotNull(view, "view == null");
         return (Action1<Integer>) view::setSeletion;
     }
+
+    @CheckResult
+    @NonNull
+    public static Action1<? super String> selectedText(@NonNull final ReactiveWheelView view) {
+
+        checkNotNull(view, "view == null");
+        return (Action1<String>) view::setSelectionByText;
+    }
 }

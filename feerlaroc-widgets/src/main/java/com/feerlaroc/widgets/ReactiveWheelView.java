@@ -51,6 +51,17 @@ public class ReactiveWheelView extends WheelView {
         }
     }
 
+    private void setSelected(String text){
+
+        try {
+
+            RxSelectable.selectedText(this).call(text);
+        } catch (Exception e) {
+
+            Log.e(TAG, getContext().getString(R.string.str_dbkey_undefined) + " : " + e.getMessage());
+        }
+    }
+
     public void subscribeTo(Observable<List> observable){
 
         observable.subscribe(this::updateValue);

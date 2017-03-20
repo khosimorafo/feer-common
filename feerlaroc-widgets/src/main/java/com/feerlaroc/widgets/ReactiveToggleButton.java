@@ -32,7 +32,7 @@ public class ReactiveToggleButton extends FeerlarocMultiStateToggleButton {
         return this;
     }
 
-    private void updateValue(Integer int_value){
+    private void setSelected(Integer int_value){
 
         try {
 
@@ -46,7 +46,7 @@ public class ReactiveToggleButton extends FeerlarocMultiStateToggleButton {
 
     public void subscribeTo(Observable<Integer> observable){
 
-        observable.subscribe(this::updateValue);
+        observable.subscribe(this::setSelected);
     }
 
     @Override

@@ -381,7 +381,18 @@ public class WheelView extends ScrollView {
                 WheelView.this.smoothScrollTo(0, p * itemHeight);
             }
         });
+    }
 
+    public void setSelectionByText(String text){
+
+        for(int i=0; i<= views.getChildCount(); i++){
+
+            TextView view = (TextView) views.getChildAt(i);
+            if(view.getText().equals(text)){
+
+                setSeletion(i + 1);
+            }
+        }
     }
 
     public String getSeletedItem() {
