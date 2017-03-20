@@ -11,10 +11,6 @@ import java.util.List;
 
 import rx.Observable;
 
-/**
- * Created by root on 2017/03/11.
- */
-
 public class ReactiveWheelView extends WheelView {
 
     public ReactiveWheelView(Context context) {
