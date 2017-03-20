@@ -25,5 +25,10 @@
     <dimen name="min_bar_width">0.8dp</dimen>
     <dimen name="default_font_size">14sp</dimen>
 
+    <dimen name="button_pressed_z_material">4dp</dimen>
+    <dimen name="button_elevation_material">2dp</dimen>
+    <dimen name="button_internal_padding">1dp</dimen>
+    <dimen name="button_min_height">7dp</dimen>
+    <dimen name="button_text_padding">2dp</dimen>
 
 </resources>

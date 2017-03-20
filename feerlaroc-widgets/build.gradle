@@ -69,7 +69,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:5.1.2'
 
     //Third Party Widgets
-    compile 'org.honorato.multistatetogglebutton:multistatetogglebutton:0.2.2'
+    //compile 'org.honorato.multistatetogglebutton:multistatetogglebutton:0.2.2'
     compile 'de.hdodenhof:circleimageview:2.1.0'
 
 }

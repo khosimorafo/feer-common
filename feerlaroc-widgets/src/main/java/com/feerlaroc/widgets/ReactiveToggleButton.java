@@ -6,13 +6,12 @@ import android.util.Log;
 import android.widget.Button;
 
 import com.feerlaroc.widgets.rx.RxToggleButton;
-
-import org.honorato.multistatetogglebutton.MultiStateToggleButton;
+import com.feerlaroc.widgets.view.FeerlarocMultiStateToggleButton;
 
 import rx.Observable;
 import rx.subjects.BehaviorSubject;
 
-public class ReactiveToggleButton extends MultiStateToggleButton {
+public class ReactiveToggleButton extends FeerlarocMultiStateToggleButton {
 
     static BehaviorSubject<Integer> mSelectedSubject = BehaviorSubject.create();
 

@@ -53,7 +53,7 @@ public class FeerlarocMultiStateToggleButton extends FeerlarocToggleButton {
     public FeerlarocMultiStateToggleButton(Context context, AttributeSet attrs) {
 
         super(context, attrs);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MultiStateToggleButton, 0, 0);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FeerlarocMultiStateToggleButton, 0, 0);
         try {
             CharSequence[] texts = a.getTextArray(R.styleable.FeerlarocMultiStateToggleButton_values);
             colorPressed = a.getColor(R.styleable.FeerlarocMultiStateToggleButton_mstbPrimaryColor, 0);
@@ -349,6 +349,20 @@ public class FeerlarocMultiStateToggleButton extends FeerlarocToggleButton {
         super.setValue(position);
     }
 
+    public void setValueByText(String text){
+
+        int index = 0;
+        for (View view : buttons){
+
+            Button btn = (Button) view;
+            if(btn.getText().equals(text)){
+
+                setValue(index);
+            }
+            index++;
+        }
+    }
+
     public boolean[] getStates() {
         int size = this.buttons == null ? 0 : this.buttons.size();
         boolean[] result = new boolean[size];
@@ -385,4 +399,6 @@ public class FeerlarocMultiStateToggleButton extends FeerlarocToggleButton {
             setButtonState(buttons.get(i), states[i]);
         }
     }
+
+
 }

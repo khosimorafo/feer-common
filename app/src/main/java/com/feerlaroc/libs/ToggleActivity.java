@@ -6,8 +6,6 @@ import android.widget.Toast;
 
 import com.feerlaroc.widgets.ReactiveToggleButton;
 
-import org.honorato.multistatetogglebutton.ToggleButton;
-
 import rx.functions.Action1;
 
 public class ToggleActivity extends AppCompatActivity {
@@ -18,7 +16,7 @@ public class ToggleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_toggle);
 
         ReactiveToggleButton rtb = (ReactiveToggleButton) findViewById(R.id.toggle_property);
-        rtb.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
+        rtb.setOnValueChangedListener(new ReactiveToggleButton.OnValueChangedListener() {
             @Override
             public void onValueChanged(int value) {
                 rtb.getSelectedSubject().onNext(value);
@@ -33,5 +31,7 @@ public class ToggleActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "Selected is : " + rtb.getTextAtChild(integer), Toast.LENGTH_LONG).show();
             }
         });
+
+        rtb.setValueByText("Mganka");
     }
 }
